@@ -21,4 +21,8 @@ class Item < ApplicationRecord
 
   enum status: [ "active", "retired" ]
 
+  def self.cheap
+    self.where(price < 15)
+  end
+
 end
